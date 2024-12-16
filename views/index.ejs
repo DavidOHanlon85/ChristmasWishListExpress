@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Wish List</title>
+    <link href='https://fonts.googleapis.com/css?family=Mountains of Christmas' rel='stylesheet'>
+    <link rel="stylesheet" href="mystyles.css">
+</head>
+<body>
+    <%- include('header'); %>
+
+    <main>
+        <div class="flex-container"> 
+
+            <form action="/" method="post">
+                <div class="flex-input">
+                    <input type="text" name="myitem" placeholder="Please get me . . . ">
+                </div>
+                <div class="flex-button">
+                    <input type="submit" value="Add to List">
+                </div>
+            </form>
+
+            <% data.forEach((wishlist) => { %>
+                <div class="flex-item">
+                    <%= wishlist.item %>
+                </div>
+            <% }); %>
+
+        </div>
+    </main>
+
+    <%- include('footer'); %>
+
+</body>
+</html>
+
